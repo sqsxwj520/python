@@ -1,0 +1,11 @@
+setup.py
+m/__init__.py
+m/m1.py
+m.egg-info/PKG-INFO
+m.egg-info/SOURCES.txt
+m.egg-info/dependency_links.txt
+m.egg-info/top_level.txt
+m/m2/__init__.py
+m/m2/m22.py
+m/m2/m21/__init__.py
+m/m2/m21/m3.py
