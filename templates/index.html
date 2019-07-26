@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金州勇士</title>
+    <style>
+        #sqs{
+            color: red;
+        }
+
+        #cy{
+            color: green;
+           }
+
+        table{
+            border-collapse:collapse;
+            text-align:center;
+        }
+
+        #ltz{
+            border: 1px solid black;
+            color: red;
+        }
+
+        #xyt{
+            border: 1px solid black;
+            color: green;
+        }
+
+        #sq{
+            border: 1px solid black;
+            color: red;
+        }
+
+        #qs{
+            border: 1px solid black;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+{% for x in new_dict.c %}
+    {% if forloop.counter|divisibleby:"2"  %}
+        <li id="sqs">
+            {{ forloop.counter }}: {{ x|add:"100"}}
+        </li>
+    {% else %}
+        <li id="cy">
+            {{ forloop.counter }}: {{ x|add:"100" }}
+        </li>
+    {% endif %}
+
+{% endfor %}
+</ul>
+
+<table id="lss">
+    {% for i in new_dict.f %}
+        <tr>
+            {% if forloop.counter|divisibleby:2 %}
+                {% for j in new_dict.f %}
+                    <td id="ltz">
+                        {{ i }} * {{ j }} = {% widthratio i 1 j %}
+                    </td>
+                {% endfor %}
+            {% else %}
+                {% for j in new_dict.f %}
+                    <td id="xyt">
+                        {{ i }} * {{ j }} = {% widthratio i 1 j %}
+                    </td>
+                {% endfor %}
+            {% endif %}
+        </tr>
+    {% endfor %}
+</table>
+<br/>
+
+<table id="lyf">
+    {% for i in new_dict.f %}
+    <tr>
+        {% if forloop.counter|divisibleby:2 %}
+            {% for j in new_dict.f %}
+                {% if j <= i %}
+                    <td id="sq">
+                        {{ i }} * {{ j }} = {% widthratio i 1 j %}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+             {% for j in new_dict.f %}
+                {% if j <= i %}
+                    <td id="qs">
+                        {{ i }} * {{ j }} = {% widthratio i 1 j %}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+
+
+<!--我是内容 === {{a}}<br/>{{b}}<br/>{{d.x}}<br/>{{c.0}}-->
+<!--文本内容 ====-->
+<!--<br/>-->
+<!--{{my_dict.a}}-->
+<!--<br/>-->
+<!--{{my_dict.date }}-->
+<!--<br/>-->
+<!--{% if  my_dict.a > 10 %}-->
+<!--{{ content }}-->
+<!--{% else %} {{ my_dict.d.x}}<br/>-->
+<!--{% endif %}-->
+
+<!--{% for x in my_dict.c %}-->
+<!--{{ x }}<br/>-->
+<!--{% endfor %}-->
+
+<!--{% ifequal my_dict.a 1 %}-->
+    <!--<h1>金州勇士</h1><hr/>-->
+<!--{% endifequal %}-->
+
+<!--{{ new_dict.a | add:"100"}}<br/>-->
+<!--<ul>-->
+<!--{% for s in my_dict.c %}-->
+    <!--<li>-->
+        <!--{% if forloop.counter|divisibleby:2 == 0 %}-->
+        <!--{{ s }}-->
+        <!--{% endif %}-->
+    <!--</li>-->
+<!--{% endfor %}-->
+<!--</ul>-->
+<!--<hr/>-->
+<!--{% for x in my_dict.e %}-->
+<!--{{ x }}<br/>-->
+<!--{% endfor %}-->
+
+<!--<ul>-->
+    <!--{% for s in new_dict.c %}-->
+        <!--{% if forloop.counter|divisibleby:2 == 0 %}-->
+        <!--<li>-->
+        <!--{{ forloop.counter }} {{ s }}-->
+        <!--</li>-->
+        <!--{% else %}-->
+        <!--<li>-->
+            <!--{{ forloop.counter }} {{ s }}-->
+        <!--</li>-->
+        <!--{% endif %}-->
+    <!--{% endfor %}-->
+<!--</ul>-->
